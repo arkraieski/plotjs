@@ -24,7 +24,8 @@ plotjs(x, ...)
 
 ## Details
 
-For simple scatter and line plots, [`plotjs.default`](plotjs.default.md)
+For simple scatter and line plots,
+[`plotjs.default`](https://arkraieski.github.io/plotjs/reference/plotjs.default.md)
 will be used. However, there are `plotjs` methods for various 'R'
 objects. Use `methods(plotjs)` and the documentation for these.
 
@@ -35,9 +36,11 @@ documents, 'Shiny' web applications, etc.
 
 For the default method, the argument `y` with the y coordinates of
 points is required. For some methods, such as
-[`plotjs.density`](plotjs.density.md) and
-[`plotjs.function`](plotjs.function.md), `y` is not required because
-those methods can compute or extract y coordinates from the `x` object.
+[`plotjs.density`](https://arkraieski.github.io/plotjs/reference/plotjs.density.md)
+and
+[`plotjs.function`](https://arkraieski.github.io/plotjs/reference/plotjs.function.md),
+`y` is not required because those methods can compute or extract y
+coordinates from the `x` object.
 
 ## Examples
 

@@ -1,8 +1,8 @@
 # Factor Variable Bar Plots
 
 This function implements a bar plot method for `factor` arguments to the
-[`plotjs`](plotjs.md) generic function. Bar heights will be counts for
-the factor levels.
+[`plotjs`](https://arkraieski.github.io/plotjs/reference/plotjs.md)
+generic function. Bar heights will be counts for the factor levels.
 
 ## Usage
 
@@ -23,11 +23,12 @@ plotjs(x, ylab = "Count", ...)
 
 - ...:
 
-  arguments passed to [`plotjsbarplot`](plotjsbarplot.md).
+  arguments passed to
+  [`plotjsbarplot`](https://arkraieski.github.io/plotjs/reference/plotjsbarplot.md).
 
 ## See also
 
-[`plotjsbarplot()`](plotjsbarplot.md)
+[`plotjsbarplot()`](https://arkraieski.github.io/plotjs/reference/plotjsbarplot.md)
 
 ## Examples
 

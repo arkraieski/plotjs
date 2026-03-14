@@ -41,7 +41,6 @@ HTMLWidgets.widget({
           responsive: true,
           maintainAspectRatio: false,
           animation: false,
-          parsing: false,
           plugins: {
             title: {
               display: !!data.title,

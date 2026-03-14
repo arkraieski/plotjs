@@ -7,9 +7,11 @@ GitHub Workflow Status
 
 The goal of plotjs is provide to a base ‘graphics’-like interface to the
 [Chart.js](https://www.chartjs.org/) JavaScript charting library. The
-main [`plotjs()`](reference/plotjs.md) function is an S3 generic like
-the base [`plot()`](https://rdrr.io/r/graphics/plot.default.html)
-function with methods for various base R objects.
+main
+[`plotjs()`](https://arkraieski.github.io/plotjs/reference/plotjs.md)
+function is an S3 generic like the base
+[`plot()`](https://rdrr.io/r/graphics/plot.default.html) function with
+methods for various base R objects.
 
 Besides `htmlwidgets`, it has minimal R dependencies. Tidyverse not
 required!

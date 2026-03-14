@@ -25,10 +25,12 @@ devtools::install_github("arkraieski/plotjs")
 
 ## Basic Scatter Plots
 
-The [`plotjs()`](../reference/plotjs.md) function works much like base
-R’s [`plot()`](https://rdrr.io/r/graphics/plot.default.html) function.
-To create a scatter plot, we simply have to provide two vectors (often
-from the same data.frame) for the arguments `x` and `y`. There are many
+The
+[`plotjs()`](https://arkraieski.github.io/plotjs/reference/plotjs.md)
+function works much like base R’s
+[`plot()`](https://rdrr.io/r/graphics/plot.default.html) function. To
+create a scatter plot, we simply have to provide two vectors (often from
+the same data.frame) for the arguments `x` and `y`. There are many
 optional arguments that can be specified, but we’ll get to that later in
 this document.
 
@@ -43,7 +45,8 @@ plot(x = mtcars$hp, y = mtcars$qsec)
 
 ![](plotjs-getting-started_files/figure-html/unnamed-chunk-3-1.png)
 
-Now with [`plotjs()`](../reference/plotjs.md):
+Now with
+[`plotjs()`](https://arkraieski.github.io/plotjs/reference/plotjs.md):
 
 ``` r
 plotjs(x = mtcars$hp, y = mtcars$qsec)
@@ -70,9 +73,11 @@ plotjs(x = mtcars$hp, y = mtcars$qsec,
 ## Line plots
 
 Like the base [`plot()`](https://rdrr.io/r/graphics/plot.default.html)
-function, [`plotjs()`](../reference/plotjs.md) can also create line
-plots by setting the `type` argument to “l” (default is “p” for points).
-You can also show both points and lines by setting it to “b”.
+function,
+[`plotjs()`](https://arkraieski.github.io/plotjs/reference/plotjs.md)
+can also create line plots by setting the `type` argument to “l”
+(default is “p” for points). You can also show both points and lines by
+setting it to “b”.
 
 ``` r
 x <- 1:10
@@ -83,11 +88,13 @@ plotjs(x, y, type = "l", zoom = FALSE)
 
 ## Color
 
-For [`plotjs()`](../reference/plotjs.md) colors for the points can be
-specified using the `col` argument. Colors can be given as strings
-containing a hex value or strings with names of R built-in colors. You
-can run [`grDevices::colors()`](https://rdrr.io/r/grDevices/colors.html)
-to see all valid color names.
+For
+[`plotjs()`](https://arkraieski.github.io/plotjs/reference/plotjs.md)
+colors for the points can be specified using the `col` argument. Colors
+can be given as strings containing a hex value or strings with names of
+R built-in colors. You can run
+[`grDevices::colors()`](https://rdrr.io/r/grDevices/colors.html) to see
+all valid color names.
 
 To color all points the same color, provide a single value for `col`:
 
@@ -128,7 +135,8 @@ plotjs(mtcars$hp, mtcars$mpg, col.group = mtcars$cyl,
 
 Sometimes, your boss might want you to make a pie chart.
 
-plotjs also provides a [`plotjspie()`](../reference/plotjspie.md)
+plotjs also provides a
+[`plotjspie()`](https://arkraieski.github.io/plotjs/reference/plotjspie.md)
 function that works like the base R `pie` function, albeit with a
 simplified set of arguments. `x` is a vector of non-negative numerical
 quantities. Names for the pie slices can be given as a character vector
@@ -148,11 +156,13 @@ plotjspie(pie.sales)
 ## S3 methods
 
 Like base’s [`plot()`](https://rdrr.io/r/graphics/plot.default.html),
-[`plotjs()`](../reference/plotjs.md) is a generic function with S3
-methods for various classes of base R objects. While
-[`plotjs()`](../reference/plotjs.md) doesn’t have as many methods, this
-nonetheless provides some useful shortcuts for making some common plots.
-To see all available methods, run:
+[`plotjs()`](https://arkraieski.github.io/plotjs/reference/plotjs.md) is
+a generic function with S3 methods for various classes of base R
+objects. While
+[`plotjs()`](https://arkraieski.github.io/plotjs/reference/plotjs.md)
+doesn’t have as many methods, this nonetheless provides some useful
+shortcuts for making some common plots. To see all available methods,
+run:
 
 ``` r
 methods(plotjs)
@@ -163,12 +173,13 @@ methods(plotjs)
 
 So far, we’ve been working with the default method. Each method has help
 available. For example, you would run
-[`?plotjs.density`](../reference/plotjs.density.md) to view the help
-file for [`plotjs.density()`](../reference/plotjs.density.md).
+[`?plotjs.density`](https://arkraieski.github.io/plotjs/reference/plotjs.density.md)
+to view the help file for
+[`plotjs.density()`](https://arkraieski.github.io/plotjs/reference/plotjs.density.md).
 
 Let’s create a density plot with the Old Faithful geyser data using
-[`plotjs.density()`](../reference/plotjs.density.md). First, create a
-“density” object:
+[`plotjs.density()`](https://arkraieski.github.io/plotjs/reference/plotjs.density.md).
+First, create a “density” object:
 
 ``` r
 d <- density(faithful$eruptions, bw = "sj")
@@ -190,9 +201,10 @@ d
 #>  Max.   :5.520   Max.   :0.5940669
 ```
 
-Since [`plotjs()`](../reference/plotjs.md) has a method for “density”
-objects, we can plot this object simply by passing it to the `x`
-argument (this method doesn’t need `y`):
+Since
+[`plotjs()`](https://arkraieski.github.io/plotjs/reference/plotjs.md)
+has a method for “density” objects, we can plot this object simply by
+passing it to the `x` argument (this method doesn’t need `y`):
 
 ``` r
 plotjs(d)
@@ -208,11 +220,12 @@ plot(d)
 
 The plots are very similar aside from some visual differences and
 obviously the interactivity of the plotjs version.
-[`plotjs()`](../reference/plotjs.md) methods are designed to replicate
-the functionality of their Base R counterparts.
+[`plotjs()`](https://arkraieski.github.io/plotjs/reference/plotjs.md)
+methods are designed to replicate the functionality of their Base R
+counterparts.
 
-[`plotjs.function()`](../reference/plotjs.function.md) lets us do cool
-stuff like this:
+[`plotjs.function()`](https://arkraieski.github.io/plotjs/reference/plotjs.function.md)
+lets us do cool stuff like this:
 
 ``` r
 plotjs(qnorm) # default range c(0, 1)
@@ -227,8 +240,9 @@ plotjs(sin, -pi,  3*pi, col = "orange2", sci.y = TRUE)
 ## Bar charts
 
 This package also provides a
-[`plotjsbarplot()`](../reference/plotjsbarplot.md) function modeled
-after [`barplot()`](https://rdrr.io/r/graphics/barplot.html) from base
+[`plotjsbarplot()`](https://arkraieski.github.io/plotjs/reference/plotjsbarplot.md)
+function modeled after
+[`barplot()`](https://rdrr.io/r/graphics/barplot.html) from base
 graphics. Pass a numeric vector describing the heights of the bars to
 the `heights` argument. You can also provide a vector of names for the
 bars to the argument `names.arg` (otherwise the x-axis will be numbered
@@ -240,8 +254,9 @@ plotjsbarplot(heights = c(100, 30), names.arg = c("Red Sox", "Yankees"), ylab = 
 ```
 
 You can also use the “shortcut” provided by the
-[`plotjs.factor()`](../reference/plotjs.factor.md) method to make a bar
-chart of factor level counts. Simply pass a factor to the `x` argument:
+[`plotjs.factor()`](https://arkraieski.github.io/plotjs/reference/plotjs.factor.md)
+method to make a bar chart of factor level counts. Simply pass a factor
+to the `x` argument:
 
 ``` r
 # cyl column of mtcars was already converted into a factor earlier in this vignette
