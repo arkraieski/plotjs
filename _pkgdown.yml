@@ -45,3 +45,7 @@ articles:
     navbar: Getting started
     contents:
       - plotjs-getting-started
+  - title: Benchmarks
+    navbar: Benchmarks
+    contents:
+      - articles/Benchmark
