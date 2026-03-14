@@ -27,6 +27,11 @@ reference:
   - title: Main plotting functions
     contents:
       - plotjs
+      - plotjs.default
+      - plotjs.density
+      - plotjs.factor
+      - plotjs.function
+      - plotjs.lm
       - plotjsbarplot
       - plotjspie
   - title: Shiny bindings
@@ -40,7 +45,3 @@ articles:
     navbar: Getting started
     contents:
       - plotjs-getting-started
-  - title: Benchmarks
-    navbar: Benchmarks
-    contents:
-      - Benchmark
