@@ -1,0 +1,10 @@
+.html-widget.plotjsScatter,
+.html-widget.plotjsbarplot,
+.html-widget.plotjspie {
+  min-height: 300px;
+}
+
+.plotjs-canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
