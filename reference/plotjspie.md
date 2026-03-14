@@ -10,6 +10,7 @@ plotjspie(
   labels = names(x),
   col = NULL,
   slice.text = "pct",
+  donut = FALSE,
   legend.position = "right",
   main = NULL,
   width = NULL,
@@ -38,6 +39,11 @@ plotjspie(
 
   `"pct"` to display percentage-formatted values inside pie slices or
   `"id"` to display the slice's name from `labels`.
+
+- donut:
+
+  logical; should the chart be rendered as a donut chart instead of a
+  full pie?
 
 - legend.position:
 
@@ -71,8 +77,10 @@ names(pie.sales) <- c("Blueberry", "Cherry",
                     "Apple", "Boston Cream", "Other", "Vanilla Cream")
 plotjspie(pie.sales)
 
-{"x":{"labels":["Blueberry","Cherry","Apple","Boston Cream","Other","Vanilla Cream"],"values":[0.12,0.3,0.26,0.16,0.04,0.12],"colors":null,"main":null,"label_mode":"pct","legend":{"position":"right","hide":false}},"evals":[],"jsHooks":[]}plotjspie(pie.sales, col = c("purple", "violetred1", "green3",
+{"x":{"labels":["Blueberry","Cherry","Apple","Boston Cream","Other","Vanilla Cream"],"values":[0.12,0.3,0.26,0.16,0.04,0.12],"colors":null,"main":null,"label_mode":"pct","donut":false,"legend":{"position":"right","hide":false}},"evals":[],"jsHooks":[]}plotjspie(pie.sales, col = c("purple", "violetred1", "green3",
                          "cornsilk", "cyan", "white"))
 
-{"x":{"labels":["Blueberry","Cherry","Apple","Boston Cream","Other","Vanilla Cream"],"values":[0.12,0.3,0.26,0.16,0.04,0.12],"colors":["#A020F0","#FF3E96","#00CD00","#FFF8DC","#00FFFF","#FFFFFF"],"main":null,"label_mode":"pct","legend":{"position":"right","hide":false}},"evals":[],"jsHooks":[]}
+{"x":{"labels":["Blueberry","Cherry","Apple","Boston Cream","Other","Vanilla Cream"],"values":[0.12,0.3,0.26,0.16,0.04,0.12],"colors":["#A020F0","#FF3E96","#00CD00","#FFF8DC","#00FFFF","#FFFFFF"],"main":null,"label_mode":"pct","donut":false,"legend":{"position":"right","hide":false}},"evals":[],"jsHooks":[]}plotjspie(pie.sales, donut = TRUE)
+
+{"x":{"labels":["Blueberry","Cherry","Apple","Boston Cream","Other","Vanilla Cream"],"values":[0.12,0.3,0.26,0.16,0.04,0.12],"colors":null,"main":null,"label_mode":"pct","donut":true,"legend":{"position":"right","hide":false}},"evals":[],"jsHooks":[]}
 ```

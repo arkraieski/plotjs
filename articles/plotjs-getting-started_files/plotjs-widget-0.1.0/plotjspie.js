@@ -17,7 +17,8 @@ HTMLWidgets.widget({
             data: x.values,
             backgroundColor: colors,
             borderColor: "#ffffff",
-            borderWidth: 1
+            borderWidth: 1,
+            cutout: x.donut ? "50%" : 0
           }]
         },
         options: {

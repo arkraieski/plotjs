@@ -153,6 +153,13 @@ names(pie.sales) <- c("Blueberry", "Cherry",
 plotjspie(pie.sales)
 ```
 
+If you want something a little better, you can also use the `donut`
+argument to make a donut chart:
+
+``` r
+plotjspie(pie.sales, donut = TRUE)
+```
+
 ## S3 methods
 
 Like base’s [`plot()`](https://rdrr.io/r/graphics/plot.default.html),
@@ -216,7 +223,7 @@ Compare to the base R version:
 plot(d)
 ```
 
-![](plotjs-getting-started_files/figure-html/unnamed-chunk-14-1.png)
+![](plotjs-getting-started_files/figure-html/unnamed-chunk-15-1.png)
 
 The plots are very similar aside from some visual differences and
 obviously the interactivity of the plotjs version.
