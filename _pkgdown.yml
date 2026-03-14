@@ -4,7 +4,6 @@ authors:
     href: https://kraieski.dev
 
 template:
-  light-switch: true
   bootstrap: 5
   bootswatch: flatly
 
