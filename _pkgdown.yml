@@ -1,9 +1,12 @@
 url: https://arkraieski.github.io/plotjs/
+authors:
+  Alex Kraieski:
+    href: https://kraieski.dev
 
 template:
   bootstrap: 5
   params:
-    bootswatch: sandstone
+    bootswatch: brite
 
 home:
   title: plotjs
