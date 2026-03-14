@@ -2,7 +2,7 @@
 
 ## Authors
 
-- **Alex Kraieski**. Author, maintainer.
+- **[Alex Kraieski](https://kraieski.dev)**. Author, maintainer.
 
 - **R Core team**. Contributor.  
   Some code and examples extracted from base R 'plot()' methods
