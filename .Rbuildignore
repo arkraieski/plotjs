@@ -7,3 +7,5 @@
 ^\.github$
 ^inst\doc\Benchmark$
 ^vignettes/articles$
+^.*\.tar\.gz$
+^.*\.Rcheck$

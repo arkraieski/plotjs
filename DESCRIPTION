@@ -13,6 +13,8 @@ Description: A continuation of the author's earlier 'c3plot' project, create int
     These plots can be embedded into 'Shiny' web applications
     or 'R Markdown' documents or displayed within the 'RStudio' 'Viewer' pane.
 License: GPL (>= 3)
+URL: https://arkraieski.github.io/plotjs/, https://github.com/arkraieski/plotjs
+BugReports: https://github.com/arkraieski/plotjs/issues
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.2

@@ -1,4 +1,46 @@
+url: https://arkraieski.github.io/plotjs/
+
 template:
   bootstrap: 5
   params:
     bootswatch: sandstone
+
+home:
+  title: plotjs
+  description: Base-graphics-like interactive widgets for R powered by Chart.js.
+  links:
+    - text: Source code
+      href: https://github.com/arkraieski/plotjs
+    - text: c3plot predecessor
+      href: https://github.com/arkraieski/c3plot
+
+navbar:
+  structure:
+    left: [reference, articles, news]
+    right: [search, github]
+  components:
+    github:
+      icon: fab fa-github
+      href: https://github.com/arkraieski/plotjs
+
+reference:
+  - title: Main plotting functions
+    contents:
+      - plotjs
+      - plotjsbarplot
+      - plotjspie
+  - title: Shiny bindings
+    contents:
+      - plotjs-shiny
+      - plotjsbarplot-shiny
+      - plotjspie-shiny
+
+articles:
+  - title: Getting started
+    navbar: Getting started
+    contents:
+      - plotjs-getting-started
+  - title: Benchmarks
+    navbar: Benchmarks
+    contents:
+      - Benchmark
