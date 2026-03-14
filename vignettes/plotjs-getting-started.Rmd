@@ -131,6 +131,11 @@ names(pie.sales) <- c("Blueberry", "Cherry",
 plotjspie(pie.sales)
 ```
 
+If you want something a little better, you can also use the `donut` argument to make a donut chart:
+```{r}
+plotjspie(pie.sales, donut = TRUE)
+```
+
 ## S3 methods
 
 Like base's `plot()`, `plotjs()` is a generic function with S3 methods for various classes of base R objects. While `plotjs()` doesn't have as many methods, this nonetheless provides some useful shortcuts for making some common plots. To see all available methods, run:

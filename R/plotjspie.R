@@ -6,6 +6,7 @@
 #' @param labels character vector giving names for the slices.
 #' @param col character vector of colors to be used in filling the slices. Can be a hex value or an R built-in color name.
 #' @param slice.text \code{"pct"} to display percentage-formatted values inside pie slices or \code{"id"} to display the slice's name from \code{labels}.
+#' @param donut logical; should the chart be rendered as a donut chart instead of a full pie?
 #' @param legend.position Position of the legend. Possible values are \code{"right"}, \code{"bottom"}, \code{"inset"}, and \code{"hide"}.
 #' @param main a main title for the plot.
 #' @param width width of the widget to create for the plot. The default is NULL, which results in automatic resizing based on the plot's container.
@@ -21,11 +22,12 @@
 #' plotjspie(pie.sales)
 #' plotjspie(pie.sales, col = c("purple", "violetred1", "green3",
 #'                          "cornsilk", "cyan", "white"))
+#' plotjspie(pie.sales, donut = TRUE)
 #'
 #' @export
 plotjspie <- function(x, labels = names(x), col = NULL, slice.text = "pct",
-                      legend.position = "right", main = NULL, width = NULL,
-                      height = NULL, elementId = NULL) {
+                      donut = FALSE, legend.position = "right", main = NULL,
+                      width = NULL, height = NULL, elementId = NULL) {
 
   if (length(x) != length(labels)) {
     stop("x and labels must be the same length")
@@ -49,6 +51,10 @@ plotjspie <- function(x, labels = names(x), col = NULL, slice.text = "pct",
     stop("labels must be 'pct' or 'id'")
   }
 
+  if (!is.logical(donut) || length(donut) != 1 || is.na(donut)) {
+    stop("donut must be TRUE or FALSE", call. = FALSE)
+  }
+
   if (!(legend.position %in% c("bottom", "right", "inset", "hide"))) {
     stop("legend position must be 'right', 'bottom', 'inset', or 'hide'")
   }
@@ -64,6 +70,7 @@ plotjspie <- function(x, labels = names(x), col = NULL, slice.text = "pct",
     colors = col_hexes,
     main = main,
     label_mode = slice.text,
+    donut = donut,
     legend = legend
   )
 

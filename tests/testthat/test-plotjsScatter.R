@@ -91,4 +91,13 @@ test_that("plotjspie() preserves label mode and legend settings", {
   expect_is(p, "plotjspie")
   expect_equal(p$x$label_mode, "id")
   expect_equal(p$x$legend$position, "bottom")
+  expect_false(p$x$donut)
+})
+
+test_that("plotjspie() supports donut charts", {
+  p <- plotjspie(c(2, 3), labels = c("A", "B"), donut = TRUE)
+
+  expect_is(p, "plotjspie")
+  expect_true(p$x$donut)
+  expect_error(plotjspie(c(2, 3), labels = c("A", "B"), donut = NA), "donut must be TRUE or FALSE")
 })

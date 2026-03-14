@@ -9,6 +9,7 @@ plotjspie(
   labels = names(x),
   col = NULL,
   slice.text = "pct",
+  donut = FALSE,
   legend.position = "right",
   main = NULL,
   width = NULL,
@@ -24,6 +25,8 @@ plotjspie(
 \item{col}{character vector of colors to be used in filling the slices. Can be a hex value or an R built-in color name.}
 
 \item{slice.text}{\code{"pct"} to display percentage-formatted values inside pie slices or \code{"id"} to display the slice's name from \code{labels}.}
+
+\item{donut}{logical; should the chart be rendered as a donut chart instead of a full pie?}
 
 \item{legend.position}{Position of the legend. Possible values are \code{"right"}, \code{"bottom"}, \code{"inset"}, and \code{"hide"}.}
 
@@ -46,5 +49,6 @@ names(pie.sales) <- c("Blueberry", "Cherry",
 plotjspie(pie.sales)
 plotjspie(pie.sales, col = c("purple", "violetred1", "green3",
                          "cornsilk", "cyan", "white"))
+plotjspie(pie.sales, donut = TRUE)
 
 }
