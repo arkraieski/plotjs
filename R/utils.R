@@ -7,3 +7,11 @@ col2hex <- function(col) {
     maxColorValue = 255
   )
 }
+
+plotjsSizingPolicy <- function(padding = 0, viewer.padding = 0, browser.fill = TRUE) {
+  htmlwidgets::sizingPolicy(
+    padding = padding,
+    browser.fill = browser.fill,
+    viewer.padding = viewer.padding
+  )
+}

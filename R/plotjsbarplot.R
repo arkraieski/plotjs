@@ -54,7 +54,8 @@ plotjsbarplot <- function(heights, names.arg = NULL, col = NULL, main = NULL, yl
     width = width,
     height = height,
     package = "plotjs",
-    elementId = elementId
+    elementId = elementId,
+    sizingPolicy = plotjsSizingPolicy()
   )
 }
 

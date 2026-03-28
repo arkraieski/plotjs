@@ -293,7 +293,8 @@ plotjsScatter <- function(data, width = NULL, height = NULL, elementId = NULL) {
     width = width,
     height = height,
     package = "plotjs",
-    elementId = elementId
+    elementId = elementId,
+    sizingPolicy = plotjsSizingPolicy()
   )
 }
 

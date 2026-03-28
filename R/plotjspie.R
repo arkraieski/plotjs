@@ -80,7 +80,8 @@ plotjspie <- function(x, labels = names(x), col = NULL, slice.text = "pct",
     width = width,
     height = height,
     package = "plotjs",
-    elementId = elementId
+    elementId = elementId,
+    sizingPolicy = plotjsSizingPolicy()
   )
 }
 
