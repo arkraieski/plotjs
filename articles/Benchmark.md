@@ -103,11 +103,11 @@ m <- microbenchmark(base = plot_base(gapminder),
 m
 #> Unit: milliseconds
 #>      expr        min         lq        mean      median         uq        max
-#>      base  24.614765  62.237660  61.7726746  62.4728685  62.587963  64.839523
-#>    plotjs   0.082674   0.128670   0.2647491   0.1434425   0.171991   4.416476
-#>    plotly   0.423420   0.469235   0.6258670   0.6114305   0.699594   2.433949
-#>  ggplotly 174.098464 179.797473 189.7293642 189.9314875 198.640855 213.025151
-#>    ggplot  36.483560  39.897667  45.4818918  42.7325440  45.545550 173.364496
+#>      base  23.508016  60.621858  60.2903546  60.9903110  61.192133  64.427534
+#>    plotjs   0.075250   0.109985   0.1453943   0.1198635   0.126226   1.577395
+#>    plotly   0.341137   0.397171   0.5024155   0.4828420   0.538696   2.037575
+#>  ggplotly 161.898338 167.702316 175.2347867 174.6228585 181.219607 202.676964
+#>    ggplot  32.980213  35.963193  40.3687412  37.7839380  40.654944 151.248403
 #>  neval
 #>     50
 #>     50
@@ -156,7 +156,7 @@ w
 #>  Wilcoxon rank sum test with continuity correction
 #> 
 #> data:  m$time[m$expr == "plotjs"] and m$time[m$expr == "plotly"]
-#> W = 99, p-value = 1.084e-15
+#> W = 49, p-value < 2.2e-16
 #> alternative hypothesis: true location shift is less than 0
 ```
 
@@ -254,11 +254,11 @@ m2 <- microbenchmark(plotjs = plotjs_line(gdp_cont),
 ``` r
 m2
 #> Unit: milliseconds
-#>      expr        min         lq        mean      median         uq        max
-#>    plotjs   0.463314   0.532764   0.6301261   0.5986465   0.642979   2.652176
-#>  ggplotly 179.573004 184.641246 192.8545299 189.3589645 193.147010 338.611483
-#>    plotly   0.380349   0.457312   0.6396228   0.5213670   0.642929   3.929829
-#>    ggplot  36.597703  38.241108  40.5238499  40.0043715  41.981022  48.433326
+#>      expr        min         lq        mean     median         uq        max
+#>    plotjs   0.443618   0.476410   0.5665169   0.538295   0.574302   2.394361
+#>  ggplotly 170.797857 174.425521 182.0984151 179.299632 182.213273 310.639590
+#>    plotly   0.356165   0.409886   0.5467231   0.437146   0.476590   3.824962
+#>    ggplot  34.382742  35.403167  37.5157257  36.665545  39.163409  43.799435
 #>  neval
 #>     50
 #>     50
@@ -284,7 +284,7 @@ w2
 #>  Wilcoxon rank sum test with continuity correction
 #> 
 #> data:  m2$time[m2$expr == "plotjs"] and m2$time[m2$expr == "plotly"]
-#> W = 1601, p-value = 0.9923
+#> W = 2094.5, p-value = 1
 #> alternative hypothesis: true location shift is less than 0
 ```
 

@@ -96,9 +96,7 @@ HTMLWidgets.widget({
     return {
       renderValue: renderChart,
       resize: function(width, height) {
-        if (el.plotjsChart) {
-          el.plotjsChart.resize(width, height);
-        }
+        window.plotjsWidgets.resizeChart(el, width, height);
       }
     };
   }

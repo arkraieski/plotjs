@@ -17,10 +17,17 @@
   function ensureChart(el, config) {
     destroyChart(el);
     el.innerHTML = "";
+    var container = document.createElement("div");
+    container.className = "plotjs-chart-container";
+    container.style.position = "relative";
+    container.style.width = "100%";
+    container.style.height = "100%";
     var canvas = document.createElement("canvas");
     canvas.className = "plotjs-canvas";
-    el.appendChild(canvas);
+    container.appendChild(canvas);
+    el.appendChild(container);
     var ctx = canvas.getContext("2d");
+    el.plotjsContainer = container;
     el.plotjsChart = new Chart(ctx, config);
     return el.plotjsChart;
   }
@@ -30,6 +37,31 @@
       el.plotjsChart.destroy();
     }
     el.plotjsChart = null;
+    el.plotjsContainer = null;
+  }
+
+  function resizeChart(el, width, height) {
+    if (!el.plotjsChart || !el.plotjsContainer) {
+      return;
+    }
+
+    if (typeof width === "number" && width >= 0) {
+      el.style.width = width + "px";
+      el.plotjsContainer.style.width = width + "px";
+    } else {
+      el.style.width = "";
+      el.plotjsContainer.style.width = "100%";
+    }
+
+    if (typeof height === "number" && height >= 0) {
+      el.style.height = height + "px";
+      el.plotjsContainer.style.height = height + "px";
+    } else {
+      el.style.height = "";
+      el.plotjsContainer.style.height = "100%";
+    }
+
+    el.plotjsChart.resize();
   }
 
   function legendOptions(legend, show, title) {
@@ -140,6 +172,7 @@
     palette: palette,
     ensureChart: ensureChart,
     destroyChart: destroyChart,
+    resizeChart: resizeChart,
     legendOptions: legendOptions,
     scientificTick: scientificTick,
     buildScatterDataset: buildScatterDataset
