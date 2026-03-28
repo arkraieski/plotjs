@@ -3,12 +3,12 @@
 \name{plotjs-shiny}
 \alias{plotjs-shiny}
 \alias{plotjsOutput}
-\alias{renderplotjs}
+\alias{renderPlotjs}
 \title{Shiny bindings for plotjs}
 \usage{
 plotjsOutput(outputId, width = "100\%", height = "400px")
 
-renderplotjs(expr, env = parent.frame(), quoted = FALSE)
+renderPlotjs(expr, env = parent.frame(), quoted = FALSE)
 }
 \arguments{
 \item{outputId}{output variable to read from}

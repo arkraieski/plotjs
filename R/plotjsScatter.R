@@ -319,7 +319,7 @@ plotjsOutput <- function(outputId, width = "100%", height = "400px") {
 
 #' @rdname plotjs-shiny
 #' @export
-renderplotjs <- function(expr, env = parent.frame(), quoted = FALSE) {
+renderPlotjs <- function(expr, env = parent.frame(), quoted = FALSE) {
   if (!quoted) {
     expr <- substitute(expr)
   }
