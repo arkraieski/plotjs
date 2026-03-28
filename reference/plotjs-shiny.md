@@ -8,7 +8,7 @@ and interactive Rmd documents.
 ``` r
 plotjsOutput(outputId, width = "100%", height = "400px")
 
-renderplotjs(expr, env = parent.frame(), quoted = FALSE)
+renderPlotjs(expr, env = parent.frame(), quoted = FALSE)
 ```
 
 ## Arguments

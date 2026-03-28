@@ -87,7 +87,7 @@ The package is tested on Windows, Linux, and MacOS.
 ## Shiny bindings
 
 - [`plotjsOutput()`](https://arkraieski.github.io/plotjs/reference/plotjs-shiny.md)
-  [`renderplotjs()`](https://arkraieski.github.io/plotjs/reference/plotjs-shiny.md)
+  [`renderPlotjs()`](https://arkraieski.github.io/plotjs/reference/plotjs-shiny.md)
   : Shiny bindings for plotjs
 - [`plotjsbarplotOutput()`](https://arkraieski.github.io/plotjs/reference/plotjsbarplot-shiny.md)
   [`renderPlotjsbarplot()`](https://arkraieski.github.io/plotjs/reference/plotjsbarplot-shiny.md)
