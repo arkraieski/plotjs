@@ -5,7 +5,7 @@ Authors@R: c(person("Alex", "Kraieski", email = "arkraieski@gmail.com",
   role = c("aut", "cre")),
    person("R Core team", role = "ctb",
       comment = "Some code and examples extracted from base R 'plot()' methods"))
-Version: 0.2.2
+Version: 0.2.3
 Description: A continuation of the author's earlier 'c3plot' project, create interactive plots
     with the 'Chart.js' <https://www.chartjs.org/> charting library using an interface
     modeled after that of base graphics. The main plotjs() function is an
