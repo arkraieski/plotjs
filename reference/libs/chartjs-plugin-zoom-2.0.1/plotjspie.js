@@ -4,8 +4,8 @@ HTMLWidgets.widget({
 
   factory: function(el) {
     function renderChart(x) {
-      var helpers = window.plotjsWidgets;
-      var colors = x.colors || x.labels.map(function(_, index) {
+      const helpers = window.plotjsWidgets;
+      const colors = x.colors || x.labels.map(function(_, index) {
         return helpers.palette(index);
       });
 

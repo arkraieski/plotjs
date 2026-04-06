@@ -4,14 +4,14 @@ HTMLWidgets.widget({
 
   factory: function(el) {
     function renderChart(x) {
-      var data = x.data;
-      var helpers = window.plotjsWidgets;
-      var datasets;
-      var showLegend = data.grouped_data !== null;
+      const data = x.data;
+      const helpers = window.plotjsWidgets;
+      let datasets;
+      const showLegend = data.grouped_data !== null;
 
       if (showLegend) {
         datasets = data.group_names.map(function(groupName, index) {
-          var color = data.col_hex ? data.col_hex[index] : helpers.palette(index);
+          const color = data.col_hex ? data.col_hex[index] : helpers.palette(index);
           return helpers.buildScatterDataset(
             groupName,
             data.grouped_data.x[groupName],

@@ -4,11 +4,11 @@ HTMLWidgets.widget({
 
   factory: function(el) {
     function renderChart(x) {
-      var helpers = window.plotjsWidgets;
-      var labels = x.categories || x.height.map(function(_, index) {
+      const helpers = window.plotjsWidgets;
+      const labels = x.categories || x.height.map(function(_, index) {
         return String(index + 1);
       });
-      var color = x.col || helpers.palette(0);
+      const color = x.col || helpers.palette(0);
 
       helpers.ensureChart(el, {
         type: "bar",

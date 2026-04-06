@@ -1,6 +1,6 @@
 (function() {
   function palette(index) {
-    var colors = [
+    const colors = [
       "#4E79A7", "#F28E2B", "#E15759", "#76B7B2", "#59A14F",
       "#EDC948", "#B07AA1", "#FF9DA7", "#9C755F", "#BAB0AC"
     ];
@@ -17,16 +17,16 @@
   function ensureChart(el, config) {
     destroyChart(el);
     el.innerHTML = "";
-    var container = document.createElement("div");
+    const container = document.createElement("div");
     container.className = "plotjs-chart-container";
     container.style.position = "relative";
     container.style.width = "100%";
     container.style.height = "100%";
-    var canvas = document.createElement("canvas");
+    const canvas = document.createElement("canvas");
     canvas.className = "plotjs-canvas";
     container.appendChild(canvas);
     el.appendChild(container);
-    var ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext("2d");
     el.plotjsContainer = container;
     el.plotjsChart = new Chart(ctx, config);
     return el.plotjsChart;
@@ -65,7 +65,7 @@
   }
 
   function legendOptions(legend, show, title) {
-    var visible = !!show && !(legend && legend.hide);
+    const visible = !!show && !(legend && legend.hide);
     return {
       display: visible,
       position: legendPosition(legend && legend.position),
@@ -95,7 +95,7 @@
   }
 
   function buildScatterDataset(label, xValues, yValues, color, data) {
-    var points = xValues.map(function(x, i) {
+    const points = xValues.map(function(x, i) {
       return { x: x, y: yValues[i] };
     }).filter(function(point) {
       return point.x !== null && point.y !== null && !isNaN(point.x) && !isNaN(point.y);
@@ -115,24 +115,24 @@
     };
   }
 
-  var pieLabelPlugin = {
+  const pieLabelPlugin = {
     id: "plotjsPieLabels",
     afterDatasetsDraw: function(chart, args, pluginOptions) {
       if (!pluginOptions || !pluginOptions.display) {
         return;
       }
 
-      var meta = chart.getDatasetMeta(0);
-      var dataset = chart.data.datasets[0];
+      const meta = chart.getDatasetMeta(0);
+      const dataset = chart.data.datasets[0];
       if (!meta || !dataset) {
         return;
       }
 
-      var total = dataset.data.reduce(function(sum, value) {
+      const total = dataset.data.reduce(function(sum, value) {
         return sum + value;
       }, 0);
 
-      var ctx = chart.ctx;
+      const ctx = chart.ctx;
       ctx.save();
       ctx.fillStyle = pluginOptions.color || "#ffffff";
       ctx.font = pluginOptions.font || "12px sans-serif";
@@ -140,13 +140,13 @@
       ctx.textBaseline = "middle";
 
       meta.data.forEach(function(arc, index) {
-        var value = dataset.data[index];
+        const value = dataset.data[index];
         if (!value) {
           return;
         }
 
-        var position = arc.tooltipPosition();
-        var label = pluginOptions.mode === "id"
+        const position = arc.tooltipPosition();
+        const label = pluginOptions.mode === "id"
           ? chart.data.labels[index]
           : Math.round((value / total) * 100) + "%";
 
