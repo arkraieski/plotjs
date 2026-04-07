@@ -1,5 +1,5 @@
 HTMLWidgets.widget({
-  name: "plotjspie",
+  name: "jspie",
   type: "output",
 
   factory: function(el) {

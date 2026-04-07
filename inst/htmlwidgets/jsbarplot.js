@@ -1,5 +1,5 @@
 HTMLWidgets.widget({
-  name: "plotjsbarplot",
+  name: "jsbarplot",
   type: "output",
 
   factory: function(el) {

@@ -19,15 +19,15 @@
 #' pie.sales <- c(0.12, 0.3, 0.26, 0.16, 0.04, 0.12)
 #' names(pie.sales) <- c("Blueberry", "Cherry",
 #'                     "Apple", "Boston Cream", "Other", "Vanilla Cream")
-#' plotjspie(pie.sales)
-#' plotjspie(pie.sales, col = c("purple", "violetred1", "green3",
-#'                          "cornsilk", "cyan", "white"))
-#' plotjspie(pie.sales, donut = TRUE)
+#' jspie(pie.sales)
+#' jspie(pie.sales, col = c("purple", "violetred1", "green3",
+#'                      "cornsilk", "cyan", "white"))
+#' jspie(pie.sales, donut = TRUE)
 #'
 #' @export
-plotjspie <- function(x, labels = names(x), col = NULL, slice.text = "pct",
-                      donut = FALSE, legend.position = "right", main = NULL,
-                      width = NULL, height = NULL, elementId = NULL) {
+jspie <- function(x, labels = names(x), col = NULL, slice.text = "pct",
+                  donut = FALSE, legend.position = "right", main = NULL,
+                  width = NULL, height = NULL, elementId = NULL) {
 
   if (length(x) != length(labels)) {
     stop("x and labels must be the same length")
@@ -75,7 +75,7 @@ plotjspie <- function(x, labels = names(x), col = NULL, slice.text = "pct",
   )
 
   htmlwidgets::createWidget(
-    name = "plotjspie",
+    name = "jspie",
     x,
     width = width,
     height = height,
@@ -85,32 +85,32 @@ plotjspie <- function(x, labels = names(x), col = NULL, slice.text = "pct",
   )
 }
 
-#' Shiny bindings for plotjspie
+#' Shiny bindings for jspie
 #'
-#' Output and render functions for using plotjspie within Shiny
+#' Output and render functions for using jspie within Shiny
 #' applications and interactive Rmd documents.
 #'
 #' @param outputId output variable to read from
 #' @param width,height Must be a valid CSS unit (like \code{'100\%'},
 #'   \code{'400px'}, \code{'auto'}) or a number, which will be coerced to a
 #'   string and have \code{'px'} appended.
-#' @param expr An expression that generates a plotjspie
+#' @param expr An expression that generates a jspie
 #' @param env The environment in which to evaluate \code{expr}.
 #' @param quoted Is \code{expr} a quoted expression (with \code{quote()})? This
 #'   is useful if you want to save an expression in a variable.
 #'
-#' @name plotjspie-shiny
+#' @name jspie-shiny
 #'
 #' @export
-plotjspieOutput <- function(outputId, width = "100%", height = "400px") {
-  htmlwidgets::shinyWidgetOutput(outputId, "plotjspie", width, height, package = "plotjs")
+jspieOutput <- function(outputId, width = "100%", height = "400px") {
+  htmlwidgets::shinyWidgetOutput(outputId, "jspie", width, height, package = "plotjs")
 }
 
-#' @rdname plotjspie-shiny
+#' @rdname jspie-shiny
 #' @export
-renderPlotjspie <- function(expr, env = parent.frame(), quoted = FALSE) {
+renderJspie <- function(expr, env = parent.frame(), quoted = FALSE) {
   if (!quoted) {
     expr <- substitute(expr)
   }
-  htmlwidgets::shinyRenderWidget(expr, plotjspieOutput, env, quoted = TRUE)
+  htmlwidgets::shinyRenderWidget(expr, jspieOutput, env, quoted = TRUE)
 }

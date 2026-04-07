@@ -34,13 +34,13 @@ reference:
       - plotjs.factor
       - plotjs.function
       - plotjs.lm
-      - plotjsbarplot
-      - plotjspie
+      - jsbarplot
+      - jspie
   - title: Shiny bindings
     contents:
       - plotjs-shiny
-      - plotjsbarplot-shiny
-      - plotjspie-shiny
+      - jsbarplot-shiny
+      - jspie-shiny
 
 articles:
   - title: Getting started

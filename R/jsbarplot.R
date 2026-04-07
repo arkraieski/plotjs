@@ -14,8 +14,8 @@
 #' @import htmlwidgets
 #'
 #' @export
-plotjsbarplot <- function(heights, names.arg = NULL, col = NULL, main = NULL, ylab = NULL,
-                          width = NULL, height = NULL, elementId = NULL, ...) {
+jsbarplot <- function(heights, names.arg = NULL, col = NULL, main = NULL, ylab = NULL,
+                      width = NULL, height = NULL, elementId = NULL, ...) {
 
   if (!is.vector(heights) || !is.numeric(heights)) {
     stop("heights must be a numeric vector")
@@ -49,7 +49,7 @@ plotjsbarplot <- function(heights, names.arg = NULL, col = NULL, main = NULL, yl
   )
 
   htmlwidgets::createWidget(
-    name = "plotjsbarplot",
+    name = "jsbarplot",
     x,
     width = width,
     height = height,
@@ -65,45 +65,45 @@ plotjsbarplot <- function(heights, names.arg = NULL, col = NULL, main = NULL, yl
 #'
 #' @param x a factor.
 #' @param ylab a label for the y axis.
-#' @param ... arguments passed to \code{\link{plotjsbarplot}}.
+#' @param ... arguments passed to \code{\link{jsbarplot}}.
 #' @method plotjs factor
 #' @export
-#' @seealso \code{\link[plotjs:plotjsbarplot]{plotjsbarplot()}}
+#' @seealso \code{\link[plotjs:jsbarplot]{jsbarplot()}}
 #' @examples
 #' mtcars <- mtcars
 #' mtcars$cyl <- as.factor(mtcars$cyl)
 #' plotjs(mtcars$cyl)
 plotjs.factor <- function(x, ylab = "Count", ...) {
   h <- as.vector(table(x))
-  plotjsbarplot(heights = h, names.arg = levels(x), ylab = ylab, ...)
+  jsbarplot(heights = h, names.arg = levels(x), ylab = ylab, ...)
 }
 
-#' Shiny bindings for plotjsbarplot
+#' Shiny bindings for jsbarplot
 #'
-#' Output and render functions for using plotjsbarplot within Shiny
+#' Output and render functions for using jsbarplot within Shiny
 #' applications and interactive Rmd documents.
 #'
 #' @param outputId output variable to read from
 #' @param width,height Must be a valid CSS unit (like \code{'100\%'},
 #'   \code{'400px'}, \code{'auto'}) or a number, which will be coerced to a
 #'   string and have \code{'px'} appended.
-#' @param expr An expression that generates a plotjsbarplot
+#' @param expr An expression that generates a jsbarplot
 #' @param env The environment in which to evaluate \code{expr}.
 #' @param quoted Is \code{expr} a quoted expression (with \code{quote()})? This
 #'   is useful if you want to save an expression in a variable.
 #'
-#' @name plotjsbarplot-shiny
+#' @name jsbarplot-shiny
 #'
 #' @export
-plotjsbarplotOutput <- function(outputId, width = "100%", height = "400px") {
-  htmlwidgets::shinyWidgetOutput(outputId, "plotjsbarplot", width, height, package = "plotjs")
+jsbarplotOutput <- function(outputId, width = "100%", height = "400px") {
+  htmlwidgets::shinyWidgetOutput(outputId, "jsbarplot", width, height, package = "plotjs")
 }
 
-#' @rdname plotjsbarplot-shiny
+#' @rdname jsbarplot-shiny
 #' @export
-renderPlotjsbarplot <- function(expr, env = parent.frame(), quoted = FALSE) {
+renderJsbarplot <- function(expr, env = parent.frame(), quoted = FALSE) {
   if (!quoted) {
     expr <- substitute(expr)
   }
-  htmlwidgets::shinyRenderWidget(expr, plotjsbarplotOutput, env, quoted = TRUE)
+  htmlwidgets::shinyRenderWidget(expr, jsbarplotOutput, env, quoted = TRUE)
 }
