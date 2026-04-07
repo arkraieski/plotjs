@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">plotjs</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.3</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.4</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,7 +58,7 @@
 
 <link href="plotjs-getting-started_files/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
 <script src="plotjs-getting-started_files/htmlwidgets-1.6.4/htmlwidgets.js"></script><script src="plotjs-getting-started_files/chartjs-4.5.1/./lib/chart.umd.min.js"></script><script src="plotjs-getting-started_files/hammerjs-2.0.8/./lib/hammer.min.js"></script><script src="plotjs-getting-started_files/chartjs-plugin-zoom-2.0.1/./lib/chartjs-plugin-zoom.min.js"></script><link href="plotjs-getting-started_files/plotjs-widget-0.1.0/./lib/plotjs.css" rel="stylesheet">
-<script src="plotjs-getting-started_files/plotjs-widget-0.1.0/./lib/plotjsWidget.js"></script><script src="plotjs-getting-started_files/plotjsScatter-binding-0.2.3/plotjsScatter.js"></script><script src="plotjs-getting-started_files/plotjspie-binding-0.2.3/plotjspie.js"></script><script src="plotjs-getting-started_files/plotjsbarplot-binding-0.2.3/plotjsbarplot.js"></script><div class="row">
+<script src="plotjs-getting-started_files/plotjs-widget-0.1.0/./lib/plotjsWidget.js"></script><script src="plotjs-getting-started_files/plotjsScatter-binding-0.2.4/plotjsScatter.js"></script><script src="plotjs-getting-started_files/jspie-binding-0.2.4/jspie.js"></script><script src="plotjs-getting-started_files/jsbarplot-binding-0.2.4/jsbarplot.js"></script><div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Getting Started with plotjs</h1>
@@ -187,9 +187,9 @@ the colors:</p>
 <h2 id="pie-charts">Pie charts<a class="anchor" aria-label="anchor" href="#pie-charts"></a>
 </h2>
 <p>Sometimes, your boss might want you to make a pie chart.</p>
-<p>plotjs also provides a <code><a href="../reference/plotjspie.html">plotjspie()</a></code> function that works
-like the base R <code>pie</code> function, albeit with a simplified set
-of arguments. <code>x</code> is a vector of non-negative numerical
+<p>plotjs also provides a <code><a href="../reference/jspie.html">jspie()</a></code> function that works like
+the base R <code>pie</code> function, albeit with a simplified set of
+arguments. <code>x</code> is a vector of non-negative numerical
 quantities. Names for the pie slices can be given as a character vector
 to the <code>labels</code> argument. If <code>x</code> is a named
 vector, the names will be used to label the pie slices
@@ -200,13 +200,13 @@ vector, the names will be used to label the pie slices
 <code class="sourceCode R"><span><span class="va">pie.sales</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.12</span>, <span class="fl">0.3</span>, <span class="fl">0.26</span>, <span class="fl">0.16</span>, <span class="fl">0.04</span>, <span class="fl">0.12</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">pie.sales</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Blueberry"</span>, <span class="st">"Cherry"</span>,</span>
 <span>    <span class="st">"Apple"</span>, <span class="st">"Boston Cream"</span>, <span class="st">"Other"</span>, <span class="st">"Vanilla Cream"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/plotjspie.html">plotjspie</a></span><span class="op">(</span><span class="va">pie.sales</span><span class="op">)</span></span></code></pre></div>
-<div class="plotjspie html-widget html-fill-item" id="htmlwidget-4018eef1a407a0df6b52" style="width:480px;height:432.632880098888px;"></div>
+<span><span class="fu"><a href="../reference/jspie.html">jspie</a></span><span class="op">(</span><span class="va">pie.sales</span><span class="op">)</span></span></code></pre></div>
+<div class="jspie html-widget html-fill-item" id="htmlwidget-4018eef1a407a0df6b52" style="width:480px;height:432.632880098888px;"></div>
 <script type="application/json" data-for="htmlwidget-4018eef1a407a0df6b52">{"x":{"labels":["Blueberry","Cherry","Apple","Boston Cream","Other","Vanilla Cream"],"values":[0.12,0.3,0.26,0.16,0.04,0.12],"colors":null,"main":null,"label_mode":"pct","donut":false,"legend":{"position":"right","hide":false}},"evals":[],"jsHooks":[]}</script><p>If you want something a little better, you can also use the
 <code>donut</code> argument to make a donut chart:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/plotjspie.html">plotjspie</a></span><span class="op">(</span><span class="va">pie.sales</span>, donut <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
-<div class="plotjspie html-widget html-fill-item" id="htmlwidget-5b1b2f4ad92281566982" style="width:480px;height:432.632880098888px;"></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/jspie.html">jspie</a></span><span class="op">(</span><span class="va">pie.sales</span>, donut <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<div class="jspie html-widget html-fill-item" id="htmlwidget-5b1b2f4ad92281566982" style="width:480px;height:432.632880098888px;"></div>
 <script type="application/json" data-for="htmlwidget-5b1b2f4ad92281566982">{"x":{"labels":["Blueberry","Cherry","Apple","Boston Cream","Other","Vanilla Cream"],"values":[0.12,0.3,0.26,0.16,0.04,0.12],"colors":null,"main":null,"label_mode":"pct","donut":true,"legend":{"position":"right","hide":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div class="section level2">
@@ -272,23 +272,23 @@ counterparts.</p>
 <div class="section level2">
 <h2 id="bar-charts">Bar charts<a class="anchor" aria-label="anchor" href="#bar-charts"></a>
 </h2>
-<p>This package also provides a <code><a href="../reference/plotjsbarplot.html">plotjsbarplot()</a></code> function
+<p>This package also provides a <code><a href="../reference/jsbarplot.html">jsbarplot()</a></code> function
 modeled after <code><a href="https://rdrr.io/r/graphics/barplot.html" class="external-link">barplot()</a></code> from base graphics. Pass a numeric
 vector describing the heights of the bars to the <code>heights</code>
 argument. You can also provide a vector of names for the bars to the
 argument <code>names.arg</code> (otherwise the x-axis will be numbered
 sequentially). Here’s a simple, silly example:</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/plotjsbarplot.html">plotjsbarplot</a></span><span class="op">(</span>heights <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">30</span><span class="op">)</span>, names.arg <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Red Sox"</span>, <span class="st">"Yankees"</span><span class="op">)</span>, ylab <span class="op">=</span> <span class="st">"% Awesome"</span>,</span>
-<span>          main <span class="op">=</span> <span class="st">"Awesomeness of Baseball Teams"</span><span class="op">)</span></span></code></pre></div>
-<div class="plotjsbarplot html-widget html-fill-item" id="htmlwidget-72cbf064100ce560a04c" style="width:480px;height:432.632880098888px;"></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/jsbarplot.html">jsbarplot</a></span><span class="op">(</span>heights <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">30</span><span class="op">)</span>, names.arg <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Red Sox"</span>, <span class="st">"Yankees"</span><span class="op">)</span>, ylab <span class="op">=</span> <span class="st">"% Awesome"</span>,</span>
+<span>      main <span class="op">=</span> <span class="st">"Awesomeness of Baseball Teams"</span><span class="op">)</span></span></code></pre></div>
+<div class="jsbarplot html-widget html-fill-item" id="htmlwidget-72cbf064100ce560a04c" style="width:480px;height:432.632880098888px;"></div>
 <script type="application/json" data-for="htmlwidget-72cbf064100ce560a04c">{"x":{"height":[100,30],"categories":["Red Sox","Yankees"],"col":null,"main":"Awesomeness of Baseball Teams","ylab":"% Awesome"},"evals":[],"jsHooks":[]}</script><p>You can also use the “shortcut” provided by the
 <code><a href="../reference/plotjs.factor.html">plotjs.factor()</a></code> method to make a bar chart of factor level
 counts. Simply pass a factor to the <code>x</code> argument:</p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># cyl column of mtcars was already converted into a factor earlier in this vignette</span></span>
 <span><span class="fu"><a href="../reference/plotjs.html">plotjs</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">$</span><span class="va">cyl</span>, col <span class="op">=</span> <span class="st">"#FF2800"</span>, main <span class="op">=</span> <span class="st">"Cars by Number of Cylinders in mtcars"</span><span class="op">)</span></span></code></pre></div>
-<div class="plotjsbarplot html-widget html-fill-item" id="htmlwidget-d11fc4360aa0230696d7" style="width:480px;height:432.632880098888px;"></div>
+<div class="jsbarplot html-widget html-fill-item" id="htmlwidget-d11fc4360aa0230696d7" style="width:480px;height:432.632880098888px;"></div>
 <script type="application/json" data-for="htmlwidget-d11fc4360aa0230696d7">{"x":{"height":[11,7,14],"categories":["4 cylinders","6 cylinders","8 cylinders"],"col":"#FF2800","main":"Cars by Number of Cylinders in mtcars","ylab":"Count"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div class="section level2">

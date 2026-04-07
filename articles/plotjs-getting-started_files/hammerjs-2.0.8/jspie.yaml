@@ -1,0 +1,11 @@
+dependencies:
+ - name: chartjs
+   version: 4.5.1
+   src: htmlwidgets
+   script: ./lib/chart.umd.min.js
+ - name: plotjs-widget
+   version: 0.1.0
+   src: htmlwidgets
+   script: ./lib/plotjsWidget.js
+   stylesheet:
+     - ./lib/plotjs.css

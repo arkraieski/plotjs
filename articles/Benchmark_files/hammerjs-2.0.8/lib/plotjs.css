@@ -1,6 +1,6 @@
 .html-widget.plotjsScatter,
-.html-widget.plotjsbarplot,
-.html-widget.plotjspie {
+.html-widget.jsbarplot,
+.html-widget.jspie {
   min-height: 300px;
 }
 

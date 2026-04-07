@@ -24,11 +24,11 @@ plotjs(x, ylab = "Count", ...)
 - ...:
 
   arguments passed to
-  [`plotjsbarplot`](https://arkraieski.github.io/plotjs/reference/plotjsbarplot.md).
+  [`jsbarplot`](https://arkraieski.github.io/plotjs/reference/jsbarplot.md).
 
 ## See also
 
-[`plotjsbarplot()`](https://arkraieski.github.io/plotjs/reference/plotjsbarplot.md)
+[`jsbarplot()`](https://arkraieski.github.io/plotjs/reference/jsbarplot.md)
 
 ## Examples
 

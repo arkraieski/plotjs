@@ -136,7 +136,7 @@ plotjs(mtcars$hp, mtcars$mpg, col.group = mtcars$cyl,
 Sometimes, your boss might want you to make a pie chart.
 
 plotjs also provides a
-[`plotjspie()`](https://arkraieski.github.io/plotjs/reference/plotjspie.md)
+[`jspie()`](https://arkraieski.github.io/plotjs/reference/jspie.md)
 function that works like the base R `pie` function, albeit with a
 simplified set of arguments. `x` is a vector of non-negative numerical
 quantities. Names for the pie slices can be given as a character vector
@@ -150,14 +150,14 @@ Here’s an example adapted from the help file for
 pie.sales <- c(0.12, 0.3, 0.26, 0.16, 0.04, 0.12)
 names(pie.sales) <- c("Blueberry", "Cherry",
     "Apple", "Boston Cream", "Other", "Vanilla Cream")
-plotjspie(pie.sales)
+jspie(pie.sales)
 ```
 
 If you want something a little better, you can also use the `donut`
 argument to make a donut chart:
 
 ``` r
-plotjspie(pie.sales, donut = TRUE)
+jspie(pie.sales, donut = TRUE)
 ```
 
 ## S3 methods
@@ -247,7 +247,7 @@ plotjs(sin, -pi,  3*pi, col = "orange2", sci.y = TRUE)
 ## Bar charts
 
 This package also provides a
-[`plotjsbarplot()`](https://arkraieski.github.io/plotjs/reference/plotjsbarplot.md)
+[`jsbarplot()`](https://arkraieski.github.io/plotjs/reference/jsbarplot.md)
 function modeled after
 [`barplot()`](https://rdrr.io/r/graphics/barplot.html) from base
 graphics. Pass a numeric vector describing the heights of the bars to
@@ -256,8 +256,8 @@ bars to the argument `names.arg` (otherwise the x-axis will be numbered
 sequentially). Here’s a simple, silly example:
 
 ``` r
-plotjsbarplot(heights = c(100, 30), names.arg = c("Red Sox", "Yankees"), ylab = "% Awesome",
-          main = "Awesomeness of Baseball Teams")
+jsbarplot(heights = c(100, 30), names.arg = c("Red Sox", "Yankees"), ylab = "% Awesome",
+      main = "Awesomeness of Baseball Teams")
 ```
 
 You can also use the “shortcut” provided by the
