@@ -55,7 +55,7 @@ library(plotjs)
 methods(plotjs)
 ```
 
-More are on the way! The goal is to replicate the behavior of base R `plot()` methods as closely as possible while also getting the benefits of an interactive Chart.js-backed widget. Each method has its own help page that can be accessed for additional information.
+More are on the way! The goal is to replicate the behavior of base R `plot()` methods as closely as possible while also getting the benefits of an interactive Chart.js-backed widget. Each method has its own help page that can be accessed for additional information. Contributions are welcome for new methods!
 
 
 ## Testing
