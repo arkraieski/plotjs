@@ -37,5 +37,5 @@ mtcars <- mtcars
 mtcars$cyl <- as.factor(mtcars$cyl)
 plotjs(mtcars$cyl)
 
-{"x":{"height":[11,7,14],"categories":["4","6","8"],"col":null,"main":null,"ylab":"Count"},"evals":[],"jsHooks":[]}
+{"x":{"height":[11,7,14],"categories":["4","6","8"],"col":null,"main":null,"ylab":"Count","aria_label":null},"evals":[],"jsHooks":[]}
 ```

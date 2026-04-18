@@ -15,7 +15,8 @@ jspie(
   main = NULL,
   width = NULL,
   height = NULL,
-  elementId = NULL
+  elementId = NULL,
+  aria.label = NULL
 )
 ```
 
@@ -69,6 +70,11 @@ jspie(
   Use an explicit element ID for the widget, rather than an
   automatically generated one.
 
+- aria.label:
+
+  a character string set as the `aria-label` attribute on the chart's
+  canvas element for accessibility.
+
 ## Examples
 
 ``` r
@@ -77,10 +83,10 @@ names(pie.sales) <- c("Blueberry", "Cherry",
                     "Apple", "Boston Cream", "Other", "Vanilla Cream")
 jspie(pie.sales)
 
-{"x":{"labels":["Blueberry","Cherry","Apple","Boston Cream","Other","Vanilla Cream"],"values":[0.12,0.3,0.26,0.16,0.04,0.12],"colors":null,"main":null,"label_mode":"pct","donut":false,"legend":{"position":"right","hide":false}},"evals":[],"jsHooks":[]}jspie(pie.sales, col = c("purple", "violetred1", "green3",
+{"x":{"labels":["Blueberry","Cherry","Apple","Boston Cream","Other","Vanilla Cream"],"values":[0.12,0.3,0.26,0.16,0.04,0.12],"colors":null,"main":null,"label_mode":"pct","donut":false,"legend":{"position":"right","hide":false},"aria_label":null},"evals":[],"jsHooks":[]}jspie(pie.sales, col = c("purple", "violetred1", "green3",
                      "cornsilk", "cyan", "white"))
 
-{"x":{"labels":["Blueberry","Cherry","Apple","Boston Cream","Other","Vanilla Cream"],"values":[0.12,0.3,0.26,0.16,0.04,0.12],"colors":["#A020F0","#FF3E96","#00CD00","#FFF8DC","#00FFFF","#FFFFFF"],"main":null,"label_mode":"pct","donut":false,"legend":{"position":"right","hide":false}},"evals":[],"jsHooks":[]}jspie(pie.sales, donut = TRUE)
+{"x":{"labels":["Blueberry","Cherry","Apple","Boston Cream","Other","Vanilla Cream"],"values":[0.12,0.3,0.26,0.16,0.04,0.12],"colors":["#A020F0","#FF3E96","#00CD00","#FFF8DC","#00FFFF","#FFFFFF"],"main":null,"label_mode":"pct","donut":false,"legend":{"position":"right","hide":false},"aria_label":null},"evals":[],"jsHooks":[]}jspie(pie.sales, donut = TRUE)
 
-{"x":{"labels":["Blueberry","Cherry","Apple","Boston Cream","Other","Vanilla Cream"],"values":[0.12,0.3,0.26,0.16,0.04,0.12],"colors":null,"main":null,"label_mode":"pct","donut":true,"legend":{"position":"right","hide":false}},"evals":[],"jsHooks":[]}
+{"x":{"labels":["Blueberry","Cherry","Apple","Boston Cream","Other","Vanilla Cream"],"values":[0.12,0.3,0.26,0.16,0.04,0.12],"colors":null,"main":null,"label_mode":"pct","donut":true,"legend":{"position":"right","hide":false},"aria_label":null},"evals":[],"jsHooks":[]}
 ```

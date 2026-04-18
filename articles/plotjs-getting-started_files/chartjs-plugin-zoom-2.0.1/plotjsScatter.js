@@ -90,7 +90,7 @@ HTMLWidgets.widget({
             }
           }
         }
-      });
+      }, data.aria_label);
     }
 
     return {

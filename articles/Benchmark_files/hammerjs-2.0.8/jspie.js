@@ -37,7 +37,7 @@ HTMLWidgets.widget({
             }
           }
         }
-      });
+      }, x.aria_label);
     }
 
     return {

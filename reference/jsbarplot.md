@@ -14,6 +14,7 @@ jsbarplot(
   width = NULL,
   height = NULL,
   elementId = NULL,
+  aria.label = NULL,
   ...
 )
 ```
@@ -55,6 +56,11 @@ jsbarplot(
 
   Use an explicit element ID for the widget, rather than an
   automatically generated one.
+
+- aria.label:
+
+  a character string set as the `aria-label` attribute on the chart's
+  canvas element for accessibility.
 
 - ...:
 

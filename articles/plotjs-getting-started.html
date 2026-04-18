@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">plotjs</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,7 +58,7 @@
 
 <link href="plotjs-getting-started_files/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
 <script src="plotjs-getting-started_files/htmlwidgets-1.6.4/htmlwidgets.js"></script><script src="plotjs-getting-started_files/chartjs-4.5.1/./lib/chart.umd.min.js"></script><script src="plotjs-getting-started_files/hammerjs-2.0.8/./lib/hammer.min.js"></script><script src="plotjs-getting-started_files/chartjs-plugin-zoom-2.0.1/./lib/chartjs-plugin-zoom.min.js"></script><link href="plotjs-getting-started_files/plotjs-widget-0.1.0/./lib/plotjs.css" rel="stylesheet">
-<script src="plotjs-getting-started_files/plotjs-widget-0.1.0/./lib/plotjsWidget.js"></script><script src="plotjs-getting-started_files/plotjsScatter-binding-0.2.4/plotjsScatter.js"></script><script src="plotjs-getting-started_files/jspie-binding-0.2.4/jspie.js"></script><script src="plotjs-getting-started_files/jsbarplot-binding-0.2.4/jsbarplot.js"></script><div class="row">
+<script src="plotjs-getting-started_files/plotjs-widget-0.1.0/./lib/plotjsWidget.js"></script><script src="plotjs-getting-started_files/plotjsScatter-binding-0.3.0/plotjsScatter.js"></script><script src="plotjs-getting-started_files/jspie-binding-0.3.0/jspie.js"></script><script src="plotjs-getting-started_files/jsbarplot-binding-0.3.0/jsbarplot.js"></script><div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Getting Started with plotjs</h1>
@@ -202,12 +202,12 @@ vector, the names will be used to label the pie slices
 <span>    <span class="st">"Apple"</span>, <span class="st">"Boston Cream"</span>, <span class="st">"Other"</span>, <span class="st">"Vanilla Cream"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/jspie.html">jspie</a></span><span class="op">(</span><span class="va">pie.sales</span><span class="op">)</span></span></code></pre></div>
 <div class="jspie html-widget html-fill-item" id="htmlwidget-4018eef1a407a0df6b52" style="width:480px;height:432.632880098888px;"></div>
-<script type="application/json" data-for="htmlwidget-4018eef1a407a0df6b52">{"x":{"labels":["Blueberry","Cherry","Apple","Boston Cream","Other","Vanilla Cream"],"values":[0.12,0.3,0.26,0.16,0.04,0.12],"colors":null,"main":null,"label_mode":"pct","donut":false,"legend":{"position":"right","hide":false}},"evals":[],"jsHooks":[]}</script><p>If you want something a little better, you can also use the
+<script type="application/json" data-for="htmlwidget-4018eef1a407a0df6b52">{"x":{"labels":["Blueberry","Cherry","Apple","Boston Cream","Other","Vanilla Cream"],"values":[0.12,0.3,0.26,0.16,0.04,0.12],"colors":null,"main":null,"label_mode":"pct","donut":false,"legend":{"position":"right","hide":false},"aria_label":null},"evals":[],"jsHooks":[]}</script><p>If you want something a little better, you can also use the
 <code>donut</code> argument to make a donut chart:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/jspie.html">jspie</a></span><span class="op">(</span><span class="va">pie.sales</span>, donut <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <div class="jspie html-widget html-fill-item" id="htmlwidget-5b1b2f4ad92281566982" style="width:480px;height:432.632880098888px;"></div>
-<script type="application/json" data-for="htmlwidget-5b1b2f4ad92281566982">{"x":{"labels":["Blueberry","Cherry","Apple","Boston Cream","Other","Vanilla Cream"],"values":[0.12,0.3,0.26,0.16,0.04,0.12],"colors":null,"main":null,"label_mode":"pct","donut":true,"legend":{"position":"right","hide":false}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-5b1b2f4ad92281566982">{"x":{"labels":["Blueberry","Cherry","Apple","Boston Cream","Other","Vanilla Cream"],"values":[0.12,0.3,0.26,0.16,0.04,0.12],"colors":null,"main":null,"label_mode":"pct","donut":true,"legend":{"position":"right","hide":false},"aria_label":null},"evals":[],"jsHooks":[]}</script>
 </div>
 <div class="section level2">
 <h2 id="s3-methods">S3 methods<a class="anchor" aria-label="anchor" href="#s3-methods"></a>
@@ -282,14 +282,37 @@ sequentially). Here’s a simple, silly example:</p>
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/jsbarplot.html">jsbarplot</a></span><span class="op">(</span>heights <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">30</span><span class="op">)</span>, names.arg <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Red Sox"</span>, <span class="st">"Yankees"</span><span class="op">)</span>, ylab <span class="op">=</span> <span class="st">"% Awesome"</span>,</span>
 <span>      main <span class="op">=</span> <span class="st">"Awesomeness of Baseball Teams"</span><span class="op">)</span></span></code></pre></div>
 <div class="jsbarplot html-widget html-fill-item" id="htmlwidget-72cbf064100ce560a04c" style="width:480px;height:432.632880098888px;"></div>
-<script type="application/json" data-for="htmlwidget-72cbf064100ce560a04c">{"x":{"height":[100,30],"categories":["Red Sox","Yankees"],"col":null,"main":"Awesomeness of Baseball Teams","ylab":"% Awesome"},"evals":[],"jsHooks":[]}</script><p>You can also use the “shortcut” provided by the
+<script type="application/json" data-for="htmlwidget-72cbf064100ce560a04c">{"x":{"height":[100,30],"categories":["Red Sox","Yankees"],"col":null,"main":"Awesomeness of Baseball Teams","ylab":"% Awesome","aria_label":null},"evals":[],"jsHooks":[]}</script><p>You can also use the “shortcut” provided by the
 <code><a href="../reference/plotjs.factor.html">plotjs.factor()</a></code> method to make a bar chart of factor level
 counts. Simply pass a factor to the <code>x</code> argument:</p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># cyl column of mtcars was already converted into a factor earlier in this vignette</span></span>
 <span><span class="fu"><a href="../reference/plotjs.html">plotjs</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">$</span><span class="va">cyl</span>, col <span class="op">=</span> <span class="st">"#FF2800"</span>, main <span class="op">=</span> <span class="st">"Cars by Number of Cylinders in mtcars"</span><span class="op">)</span></span></code></pre></div>
 <div class="jsbarplot html-widget html-fill-item" id="htmlwidget-d11fc4360aa0230696d7" style="width:480px;height:432.632880098888px;"></div>
-<script type="application/json" data-for="htmlwidget-d11fc4360aa0230696d7">{"x":{"height":[11,7,14],"categories":["4 cylinders","6 cylinders","8 cylinders"],"col":"#FF2800","main":"Cars by Number of Cylinders in mtcars","ylab":"Count"},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-d11fc4360aa0230696d7">{"x":{"height":[11,7,14],"categories":["4 cylinders","6 cylinders","8 cylinders"],"col":"#FF2800","main":"Cars by Number of Cylinders in mtcars","ylab":"Count","aria_label":null},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="section level2">
+<h2 id="accessibility">Accessibility<a class="anchor" aria-label="anchor" href="#accessibility"></a>
+</h2>
+<p>All plotting functions accept an <code>aria.label</code> argument.
+When provided, the string is set as the <code>aria-label</code>
+attribute on the chart’s <code>&lt;canvas&gt;</code> element, along with
+<code>role="img"</code>, so that screen readers can announce a
+meaningful description of the chart.</p>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/plotjs.html">plotjs</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">$</span><span class="va">hp</span>, <span class="va">mtcars</span><span class="op">$</span><span class="va">qsec</span>,</span>
+<span>       main <span class="op">=</span> <span class="st">"1/4 Mile Time vs. Horsepower"</span>,</span>
+<span>       aria.label <span class="op">=</span> <span class="st">"Scatter plot of 1/4 mile time vs. horsepower for 32 cars from the mtcars dataset."</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="../reference/jsbarplot.html">jsbarplot</a></span><span class="op">(</span>heights <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">30</span><span class="op">)</span>, names.arg <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Red Sox"</span>, <span class="st">"Yankees"</span><span class="op">)</span>,</span>
+<span>          ylab <span class="op">=</span> <span class="st">"% Awesome"</span>, main <span class="op">=</span> <span class="st">"Awesomeness of Baseball Teams"</span>,</span>
+<span>          aria.label <span class="op">=</span> <span class="st">"Bar chart comparing awesomeness: Red Sox 100%, Yankees 30%."</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="../reference/jspie.html">jspie</a></span><span class="op">(</span><span class="va">pie.sales</span>,</span>
+<span>      aria.label <span class="op">=</span> <span class="st">"Pie chart of pie flavor sales: Cherry 30%, Apple 26%, Boston Cream 16%, Blueberry 12%, Vanilla Cream 12%, Other 4%."</span><span class="op">)</span></span></code></pre></div>
+<p>Without <code>aria.label</code>, the canvas element has no label and
+screen readers will skip it or announce it generically. A good label
+describes the chart’s main finding or the data it shows.</p>
 </div>
 <div class="section level2">
 <h2 id="conclusion">Conclusion<a class="anchor" aria-label="anchor" href="#conclusion"></a>

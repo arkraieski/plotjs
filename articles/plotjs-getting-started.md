@@ -270,6 +270,30 @@ to the `x` argument:
 plotjs(mtcars$cyl, col = "#FF2800", main = "Cars by Number of Cylinders in mtcars")
 ```
 
+## Accessibility
+
+All plotting functions accept an `aria.label` argument. When provided,
+the string is set as the `aria-label` attribute on the chart’s
+`<canvas>` element, along with `role="img"`, so that screen readers can
+announce a meaningful description of the chart.
+
+``` r
+plotjs(mtcars$hp, mtcars$qsec,
+       main = "1/4 Mile Time vs. Horsepower",
+       aria.label = "Scatter plot of 1/4 mile time vs. horsepower for 32 cars from the mtcars dataset.")
+
+jsbarplot(heights = c(100, 30), names.arg = c("Red Sox", "Yankees"),
+          ylab = "% Awesome", main = "Awesomeness of Baseball Teams",
+          aria.label = "Bar chart comparing awesomeness: Red Sox 100%, Yankees 30%.")
+
+jspie(pie.sales,
+      aria.label = "Pie chart of pie flavor sales: Cherry 30%, Apple 26%, Boston Cream 16%, Blueberry 12%, Vanilla Cream 12%, Other 4%.")
+```
+
+Without `aria.label`, the canvas element has no label and screen readers
+will skip it or announce it generically. A good label describes the
+chart’s main finding or the data it shows.
+
 ## Conclusion
 
 By now you should be more than ready to start using plotjs on your own

@@ -14,3 +14,37 @@
   width: 100% !important;
   height: 100% !important;
 }
+
+.plotjs-reset-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 6px;
+  font-size: 14px;
+  line-height: 1;
+  font-family: inherit;
+  color: #444;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.plotjs-reset-btn:hover {
+  background: #f0f0f0;
+  border-color: #999;
+}
+
+.plotjs-reset-btn:focus-visible {
+  outline: 2px solid #005fcc;
+  outline-offset: 2px;
+}
+
+.plotjs-reset-btn:active {
+  background: #e0e0e0;
+}

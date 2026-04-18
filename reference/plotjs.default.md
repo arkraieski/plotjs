@@ -104,6 +104,9 @@ plotjs(
   arguments passed to
   [`htmlwidgets::createWidget()`](https://rdrr.io/pkg/htmlwidgets/man/createWidget.html):
   `width`, `height`, and `elementId`. These arguments default to NULL.
+  You may also pass `aria.label`, a character string set as the
+  `aria-label` attribute on the chart's canvas element for
+  accessibility.
 
 ## Examples
 
