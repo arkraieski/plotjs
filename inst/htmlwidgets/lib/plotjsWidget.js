@@ -14,7 +14,7 @@
     return position || "right";
   }
 
-  function ensureChart(el, config) {
+  function ensureChart(el, config, ariaLabel) {
     destroyChart(el);
     el.innerHTML = "";
     const container = document.createElement("div");
@@ -24,6 +24,10 @@
     container.style.height = "100%";
     const canvas = document.createElement("canvas");
     canvas.className = "plotjs-canvas";
+    if (ariaLabel) {
+      canvas.setAttribute("role", "img");
+      canvas.setAttribute("aria-label", ariaLabel);
+    }
     container.appendChild(canvas);
     el.appendChild(container);
     const ctx = canvas.getContext("2d");

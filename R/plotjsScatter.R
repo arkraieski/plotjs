@@ -40,7 +40,7 @@ plotjs <- function(x, ...) {
 #' @param legend.position Position of the plot legend. Possible values are "right", "bottom", "inset", and "hide". This is ignored if all points are colored the same.
 #' @param sci.x logical indicating whether scientific notation should be used for the x-axis.
 #' @param sci.y logical indicating whether scientific notation should be used for the y-axis.
-#' @param ... arguments passed to \code{\link[htmlwidgets:createWidget]{htmlwidgets::createWidget()}}: \code{width}, \code{height}, and \code{elementId}. These arguments default to NULL.
+#' @param ... arguments passed to \code{\link[htmlwidgets:createWidget]{htmlwidgets::createWidget()}}: \code{width}, \code{height}, and \code{elementId}. These arguments default to NULL. You may also pass \code{aria.label}, a character string set as the \code{aria-label} attribute on the chart's canvas element for accessibility.
 #'
 #' @method plotjs default
 #'
@@ -284,7 +284,8 @@ plotjs.lm <- function(x, which = 1, ...) {
 #' @import htmlwidgets
 #'
 #' @noRd
-plotjsScatter <- function(data, width = NULL, height = NULL, elementId = NULL) {
+plotjsScatter <- function(data, width = NULL, height = NULL, elementId = NULL, aria.label = NULL) {
+  data$aria_label <- aria.label
   x <- list(data = data)
 
   htmlwidgets::createWidget(

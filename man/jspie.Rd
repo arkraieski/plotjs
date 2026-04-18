@@ -14,7 +14,8 @@ jspie(
   main = NULL,
   width = NULL,
   height = NULL,
-  elementId = NULL
+  elementId = NULL,
+  aria.label = NULL
 )
 }
 \arguments{
@@ -37,6 +38,8 @@ jspie(
 \item{height}{height of the widget to create for the plot. The default is NULL, which results in automatic resizing based on the plot's container.}
 
 \item{elementId}{Use an explicit element ID for the widget, rather than an automatically generated one.}
+
+\item{aria.label}{a character string set as the \code{aria-label} attribute on the chart's canvas element for accessibility.}
 }
 \description{
 Draw an interactive pie chart using 'Chart.js'

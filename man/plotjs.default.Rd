@@ -54,7 +54,7 @@
 
 \item{sci.y}{logical indicating whether scientific notation should be used for the y-axis.}
 
-\item{...}{arguments passed to \code{\link[htmlwidgets:createWidget]{htmlwidgets::createWidget()}}: \code{width}, \code{height}, and \code{elementId}. These arguments default to NULL.}
+\item{...}{arguments passed to \code{\link[htmlwidgets:createWidget]{htmlwidgets::createWidget()}}: \code{width}, \code{height}, and \code{elementId}. These arguments default to NULL. You may also pass \code{aria.label}, a character string set as the \code{aria-label} attribute on the chart's canvas element for accessibility.}
 }
 \description{
 Draw an interactive scatterplot or line plot using 'Chart.js'.
