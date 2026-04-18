@@ -14,6 +14,27 @@
     return position || "right";
   }
 
+  function addResetButton(container, chart) {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "plotjs-reset-btn";
+    btn.setAttribute("aria-label", "Reset plot view");
+
+    const icon = document.createElement("span");
+    icon.setAttribute("aria-hidden", "true");
+    icon.textContent = "\u21BA"; // ↺
+
+    btn.appendChild(icon);
+
+    btn.addEventListener("click", function() {
+      if (chart && typeof chart.resetZoom === "function") {
+        chart.resetZoom();
+      }
+    });
+
+    container.appendChild(btn);
+  }
+
   function ensureChart(el, config, ariaLabel) {
     destroyChart(el);
     el.innerHTML = "";
@@ -33,6 +54,7 @@
     const ctx = canvas.getContext("2d");
     el.plotjsContainer = container;
     el.plotjsChart = new Chart(ctx, config);
+    addResetButton(container, el.plotjsChart);
     return el.plotjsChart;
   }
 
