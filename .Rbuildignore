@@ -9,3 +9,4 @@
 ^vignettes/articles$
 ^.*\.tar\.gz$
 ^.*\.Rcheck$
+^CLAUDE\.md$
