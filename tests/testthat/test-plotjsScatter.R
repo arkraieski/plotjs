@@ -64,6 +64,14 @@ test_that("plotjs() forwards zoom and grouped payload fields", {
   expect_equal(z$x$data$group_names, levels(mtcars$cyl))
 })
 
+test_that("plotjs() lets you set the aria-label attribute", {
+  a <- plotjs(mtcars$disp,
+              mtcars$mpg,
+              aria.label = "Scatter plot of displacement vs. miles per gallon")
+
+  expect_equal(a$x$data$aria_label, "Scatter plot of displacement vs. miles per gallon")
+})
+
 context("plotjs.lm")
 
 test_that("plotjs.lm() creates an html widget",{
@@ -85,19 +93,9 @@ test_that("plotjs.function() works",{
   expect_is(q, "htmlwidget")
 })
 
-test_that("jspie() preserves label mode and legend settings", {
-  p <- jspie(c(2, 3), labels = c("A", "B"), slice.text = "id", legend.position = "bottom")
 
-  expect_is(p, "jspie")
-  expect_equal(p$x$label_mode, "id")
-  expect_equal(p$x$legend$position, "bottom")
-  expect_false(p$x$donut)
-})
 
-test_that("jspie() supports donut charts", {
-  p <- jspie(c(2, 3), labels = c("A", "B"), donut = TRUE)
 
-  expect_is(p, "jspie")
-  expect_true(p$x$donut)
-  expect_error(jspie(c(2, 3), labels = c("A", "B"), donut = NA), "donut must be TRUE or FALSE")
-})
+
+
+

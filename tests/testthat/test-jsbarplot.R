@@ -28,6 +28,17 @@ test_that("jsbarplot() works with a hex color", {
 })
 
 
+test_that("you can set the aria-label attribute for jsbarplot", {
+  b <- jsbarplot(c(100, 30),
+                 names.arg = c("Red Sox", "Yankees"),
+                 ylab = "% Awesome",
+                 main = "Awesomeness of Baseball Teams",
+                 aria.label = "Baseball team awesomeness")
+
+  expect_equal(b$x$aria_label, "Baseball team awesomeness")
+})
+
+
 context("plotjs.factor")
 
 test_that("plotjs.factor works", {
@@ -40,3 +51,14 @@ test_that("plotjs.factor works", {
   expect_is(f, "htmlwidget")
 
 })
+
+test_that("you can set the aria-label attribute for plotjs.factor", {
+  mtcars <- mtcars
+  mtcars$cyl <- as.factor(mtcars$cyl)
+
+  f <- plotjs(mtcars$cyl, aria.label = "Number of cylinders")
+
+  expect_equal(f$x$aria_label, "Number of cylinders")
+})
+
+
